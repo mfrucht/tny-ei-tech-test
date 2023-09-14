@@ -25,8 +25,73 @@ async function stop_db(db) {
   });
 }
 
-async function nabokov(db) {
-  const sql = `SELECT * FROM nabokov`;
+async function books(db) {
+  const sql = `
+  SELECT
+    books.title,
+    authors.name,
+    books.isbn,
+    books.year,
+    publishers.publisher_name
+  FROM books 
+  JOIN authors ON books.author_id = authors.author_id
+  JOIN publishers ON books.publisher_id = publishers.publisher_id
+  `;
+
+  return new Promise((resolve, reject) => {
+    db.all(sql, (err, rows) => {
+      if (err) {
+        reject(err);
+      }
+      resolve(rows);
+    })
+  });
+}
+
+async function bookByIsbn(db, isbn) {
+  const sql = `
+  SELECT
+    books.title,
+    authors.name,
+    authors.date_of_birth,
+    authors.date_of_death,
+    books.isbn,
+    books.year,
+    publishers.publisher_name,
+    books.page_count,
+    books.genre,
+    books.format
+  FROM books
+  JOIN authors ON books.author_id = authors.author_id
+  JOIN publishers ON books.publisher_id = publishers.publisher_id
+  WHERE books.isbn = ?
+  `;
+  console.log(sql);
+  return new Promise((resolve, reject) => {
+    db.all(sql, [isbn], (err, rows) => {
+      if (err) {
+        reject(err);
+      }
+      resolve(rows);
+    })
+  });
+}
+
+async function publishers(db) {
+  const sql = `SELECT * FROM publishers`;
+
+  return new Promise((resolve, reject) => {
+    db.all(sql, (err, rows) => {
+      if (err) {
+        reject(err);
+      }
+      resolve(rows);
+    })
+  });
+}
+
+async function authors(db) {
+  const sql = `SELECT * FROM authors`;
 
   return new Promise((resolve, reject) => {
     db.all(sql, (err, rows) => {
@@ -41,5 +106,8 @@ async function nabokov(db) {
 module.exports = {
   start_db,
   stop_db,
-  nabokov,
+  books,
+  bookByIsbn,
+  publishers,
+  authors
 }

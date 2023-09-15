@@ -1,7 +1,7 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
-import { Books } from './pages/books';
-import { BookDetails } from './pages/bookDetails';
-import { NotFound } from './pages/notFound';
+import { Books } from './pages/Books';
+import { BookDetails } from './pages/BookDetails';
+import { NotFound } from './pages/NotFound';
 
 
 export const Routing = () => {

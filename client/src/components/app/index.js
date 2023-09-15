@@ -1,6 +1,11 @@
+import { BrowserRouter as Router } from "react-router-dom";
+import { Routing } from "../router";
+
 function App() {
   return (
-    <div className="container mx-auto">hello, world</div>
+    <Router>
+      <Routing />
+    </Router>
   );
 }
 

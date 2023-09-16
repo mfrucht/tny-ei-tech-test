@@ -1,5 +1,5 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
-import { Books } from './pages/Books';
+import Books from './pages/Books';
 import { BookDetails } from './pages/BookDetails';
 import { NotFound } from './pages/NotFound';
 

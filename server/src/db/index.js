@@ -29,10 +29,10 @@ async function books(db) {
   const sql = `
   SELECT
     books.title,
-    authors.name,
+    authors.name as authorName,
     books.isbn,
     books.year,
-    publishers.publisher_name
+    publishers.publisher_name as publisher
   FROM books 
   JOIN authors ON books.author_id = authors.author_id
   JOIN publishers ON books.publisher_id = publishers.publisher_id
@@ -52,12 +52,12 @@ async function bookByIsbn(db, isbn) {
   const sql = `
   SELECT
     books.title,
-    authors.name,
-    authors.date_of_birth,
-    authors.date_of_death,
+    authors.name as authorName,
+    authors.date_of_birth as authorDOB,
+    authors.date_of_death as authorDOD,
     books.isbn,
     books.year,
-    publishers.publisher_name,
+    publishers.publisher_name as publisherr,
     books.page_count,
     books.genre,
     books.format

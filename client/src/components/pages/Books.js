@@ -14,11 +14,11 @@ export default function Books() {
 
   return (
     <>
-      <h1>Books</h1>
+      <h1 class='text-3xl font-semibold mb-4'>Books</h1>
       {books? books.map((book) => {
-        return <div>
+        return <ul role="list" class="pl-10 pr-10 divide-y divide-slate-200">
           <Book key={book.id} {...book} />
-        </div>
+        </ul>
         })
         : null }
     </>

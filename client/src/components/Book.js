@@ -9,16 +9,14 @@ const Book = ({
 }) => {
   return (
     <>
-      {/* <ul>
-        <li key={book.isbn}>{book.title}</li>
-        <li></li>
-      </ul>  */}
-      <div className="book-details">
-        <div>Title: {title}</div>
-        <div>Author: {authorName}</div>
-        <div>Year: {year}</div>
-        <br/>
-      </div>
+      <li key={isbn} class="border-b border-emerald-500 mb-4">
+        <h2 class="text-lg font-bold">{title}</h2>
+        <div class="flex justify-between">
+          <p class="mt-1 mr-4">Author: {authorName}</p>
+          <p class="mt-1">{year}</p>
+        </div>
+      <br/>
+      </li>
     </>
   );
 };

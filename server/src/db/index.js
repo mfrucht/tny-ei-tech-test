@@ -66,7 +66,6 @@ async function bookByIsbn(db, isbn) {
   JOIN publishers ON books.publisher_id = publishers.publisher_id
   WHERE books.isbn = ?
   `;
-  console.log(sql);
   return new Promise((resolve, reject) => {
     db.all(sql, [isbn], (err, rows) => {
       if (err) {

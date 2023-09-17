@@ -57,7 +57,7 @@ async function bookByIsbn(db, isbn) {
     authors.date_of_death as authorDOD,
     books.isbn,
     books.year,
-    publishers.publisher_name as publisherr,
+    publishers.publisher_name as publisher,
     books.page_count,
     books.genre,
     books.format

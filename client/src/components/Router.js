@@ -1,6 +1,6 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
-import Books from './pages/Books';
-import { BookDetails } from './pages/BookDetails';
+import Books from './pages/BookList';
+import BookDetails from './pages/BookDetails';
 import { NotFound } from './pages/NotFound';
 
 

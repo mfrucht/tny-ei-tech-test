@@ -9,7 +9,7 @@ const Book = ({
 }) => {
   return (
     <>
-      <a href={"/books"+isbn} class="block hover:bg-gray-200 p-4 transition-all border-b border-emerald-500 ">
+      <a href={'/books/'+isbn} class="block hover:bg-gray-200 p-4 transition-all border-b border-emerald-500 ">
       <li key={isbn} class="mb-4">
         <h2 class="text-lg font-bold">{title}</h2>
         <div class="flex justify-between">

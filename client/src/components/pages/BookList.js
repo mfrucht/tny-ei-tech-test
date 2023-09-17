@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import Book from '../Book';
+import Book from '../BookListItem';
 
 export default function Books() {
   const [books, setBooks] = useState([]);

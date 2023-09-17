@@ -58,7 +58,7 @@ async function bookByIsbn(db, isbn) {
     books.isbn,
     books.year,
     publishers.publisher_name as publisher,
-    books.page_count,
+    books.page_count as pageCount,
     books.genre,
     books.format
   FROM books

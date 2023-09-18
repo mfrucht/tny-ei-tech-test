@@ -3,6 +3,7 @@ import Book from '../BookListItem';
 
 export default function Books() {
   const [books, setBooks] = useState([]);
+  const [loading,setLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState('');
   const [filteredBooks, setFilteredBooks] = useState([]);
 
@@ -21,6 +22,7 @@ export default function Books() {
     .then(response => response.json())
     .then(data => {
       setBooks(data);
+      setLoading(false);
     });
   }, []);
 
@@ -34,6 +36,12 @@ export default function Books() {
         onChange={handleSearch}
         class="bg-white border-2 border-gray-300 rounded-lg p-2 ml-10 mb-4"
       />
+      {loading ? (
+        <div className="flex items-center justify-center h-64">
+          <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-blue-500"></div>
+          <p className="ml-2 text-gray-700">Loading...</p>
+        </div>
+      ) : (
       <ul>
         {books ? (
           searchQuery === '' ? (
@@ -53,6 +61,7 @@ export default function Books() {
           <p>No books found.</p>
         )}
       </ul>
+      )}
     </>
   );
 }

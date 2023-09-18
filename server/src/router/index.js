@@ -13,10 +13,6 @@ function create_router(db) {
     const book = await bookByIsbn(db, isbn);
     res.json(book);
   });
-  
-  router.get('/', (req, res) => {
-    res.send('hello, world');
-  });
 
   return router;
 }

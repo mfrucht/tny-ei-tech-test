@@ -14,24 +14,29 @@ const Book = ({
 }) => {
   return (
     <>
-      <div className="bg-white p-8 mx-auto mt-8 max-w-xl border-l border-emerald-500">
-        <h1 className="text-3xl font-semibold">{title}</h1>
-        <p className="text-gray-600 mt-2">{authorName}</p>
-          <ul className="mt-2">
-            <li>
-              <strong>ISBN: </strong> {isbn}
+      <div class="bg-white p-8 mx-10 mt-8 max-w-xl border-l border-emerald-500">
+        <h1 class="text-3xl font-semibold">{title}</h1>
+        <p class="text-gray-600 mt-2">{authorName}</p>
+          <ul class="mt-2">
+            <li class="mt-2 mb-2">
+              <p class="text-gray-600 text-xs">ISBN</p>
+              <p class="font-semibold">{isbn}</p>
             </li>
-            <li>
-              <strong>Page Count: </strong> {pageCount}
+            <li class="mt-2 mb-2">
+              <p class="text-gray-600 text-xs">Page Count</p>
+              <p class="font-semibold">{pageCount}</p>
             </li>
-            <li>
-              <strong>Publisher:</strong> {publisher}
+            <li class="mt-2 mb-2">
+              <p class="text-gray-600 text-xs">Publisher</p>
+              <p class="font-semibold">{publisher}</p>
             </li>
-            <li>
-              <strong>Published Year: </strong> {year}
+            <li class="mt-2 mb-2">
+              <p class="text-gray-600 text-xs">Year</p>
+              <p class="font-semibold">{year}</p>
             </li>
-            <li>
-              <strong>Format: </strong> {format}
+            <li class="mt-2 mb-2">
+              <p class="text-gray-600 text-xs">Format</p>
+              <p class="font-semibold">{format}</p>
             </li>
           </ul>
       </div>

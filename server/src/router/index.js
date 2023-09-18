@@ -1,5 +1,6 @@
 const express = require('express');
 const { books, publishers, authors, bookByIsbn } = require('../db');
+const { default: AddBookForm } = require('../../../client/src/components/AddBookForm');
 const router = express.Router();
 
 function create_router(db) {
@@ -16,6 +17,12 @@ function create_router(db) {
   
   router.get('/', (req, res) => {
     res.send('hello, world');
+  });
+
+  router.post('/book', async (req, res) => {
+    const book = req.body;
+    const status = await AddBook(book);
+    res.json(status);
   });
 
   return router;

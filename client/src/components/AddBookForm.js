@@ -9,6 +9,8 @@ function AddBookForm({onClose}) {
   const [year, setYear] = useState('');
   const [format, setFormat] = useState('');
   const [genre, setGenre] = useState('');
+  const [publisherList, setPublisherList] = useState([]);
+  const [authorList, setAuthorList] = useState([]);
 
   const handleCancel = (e) => {
     e.preventDefault();
@@ -36,6 +38,14 @@ function AddBookForm({onClose}) {
 
     onClose();
   };
+
+  useEffect(() => {
+    fetch('http://localhost:3001/publishers'+isbn)
+    .then(response => response.json())
+    .then(data => {
+      setBook(data);
+    });
+  }, []);
 
   return (
     <div className="fixed inset-0 flex items-center justify-center z-50">

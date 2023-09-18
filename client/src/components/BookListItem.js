@@ -7,7 +7,8 @@ const Book = ({
   year,
   isbn
 }) => {
-  return <>
+  return (
+    <>
       <a href={'/books/'+isbn} class="block hover:bg-gray-200 pt-4 pb-2 transition-all border-b border-emerald-500 ">
       <li key={isbn} class="mb-4">
         <h2 class="text-lg font-bold">{title}</h2>
@@ -18,7 +19,7 @@ const Book = ({
       </li>
       </a>
     </>
-  ;
+  );
 };
 
 export default Book;

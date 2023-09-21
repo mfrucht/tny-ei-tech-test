@@ -32,6 +32,7 @@ async function books(db) {
     authors.name as authorName,
     books.isbn,
     books.year,
+    books.genre,
     publishers.publisher_name as publisher
   FROM books 
   JOIN authors ON books.author_id = authors.author_id

@@ -14,7 +14,8 @@ const Book = ({
 }) => {
   return (
     <>
-      <div class="bg-white p-8 mx-10 mt-8 max-w-xl border-l border-emerald-500">
+      <div class={genre=='fiction' ? "bg-white p-8 mx-10 mt-8 max-w-xl border-l border-emerald-500"
+        : "bg-white p-8 mx-10 mt-8 max-w-xl border-l border-red-500"}>
         <h1 class="text-3xl font-semibold">{title}</h1>
         <p class="text-gray-600 mt-2">{authorName}</p>
           <ul class="mt-2">

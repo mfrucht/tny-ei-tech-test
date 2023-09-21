@@ -10,7 +10,7 @@ export default function BookDetails() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch('http://localhost:3001/books'+isbn)
+    fetch('http://localhost:3001/books/'+isbn)
     .then(response => response.json())
     .then(data => {
       setLoading(false)

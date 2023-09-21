@@ -8,7 +8,7 @@ function create_router(db) {
     res.json(allBooks);
   });
 
-  router.get('/books:isbn', async (req, res) => {
+  router.get('/books/:isbn', async (req, res) => {
     var { isbn } = req.params;
     const book = await bookByIsbn(db, isbn);
     res.json(book);
